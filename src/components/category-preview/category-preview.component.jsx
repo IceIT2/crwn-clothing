@@ -1,10 +1,13 @@
 import { CategoryPreviewContainer, Title, Preview } from './category-preview.styles.jsx';
+import {useSelector} from 'react-redux';
 
 import { Link } from 'react-router-dom';
+import { selectCategoriesMap } from '../../store/categories/category.selector.js';
 
 import ProductCard from '../product-card/product-card.component';
-
 const CategoryPreview = ({ title = '', products = [] }) => {
+const categoriesMap = useSelector(selectCategoriesMap);
+
     return (
     <CategoryPreviewContainer>
         <Title>
